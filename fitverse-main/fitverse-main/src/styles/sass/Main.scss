@@ -1,0 +1,32 @@
+// Abstracts
+@import "../sass/abstracts/mixins.scss";
+@import "../sass/abstracts/variables.scss";
+@import "../sass/abstracts/keyframes.scss";
+
+// Pages
+@import "../sass/pages/TrainingPlan.scss";
+@import "../sass/pages/Imc.scss";
+@import "../sass/pages/Perfil.scss";
+@import "../sass/pages/Login.scss";
+@import "../sass/pages/Register.scss";
+@import "../sass/pages/ChangeUsername.scss";
+@import "../sass/pages/ChangePassword.scss";
+
+// Components
+@import "../sass/components/Navbar.scss";
+@import "../sass/components/Scrollbar.scss";
+
+// Breakpoints
+@import "../sass/abstracts/breakpoints.scss";
+
+
+
+// General Styles
+* {
+    font-family: $FontMain;
+    word-break: keep-all;
+}
+
+body {
+    overflow-x: hidden;
+}
