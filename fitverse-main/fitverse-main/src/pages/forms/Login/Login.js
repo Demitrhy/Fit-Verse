@@ -48,11 +48,13 @@ const Login = () => {
         } else {
           if (user[0]) {
             localStorage.setItem("user", JSON.stringify(user[0]));
+            setIsLoading(false);
             if (user[1]) {
               localStorage.setItem("userExercises", JSON.stringify(user[1]));
-              navigate("/trainingPlan");
-              setIsLoading(false);
+            
             }
+            navigate("/trainingPlan");
+            setIsLoading(false);
           }
         }
       } catch (error) {
@@ -67,16 +69,17 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="login-form-page">
+    <div className="login-form-page" >
       <h1>
-        Bem-vindo de volta <br /> ao <span>FitVerse</span>!
+        Bem-vindo <br /> ao <span>FitVerse</span>!
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <div className="mb-4">
           <label htmlFor="email" className="form-label">
             Endereço de E-mail
           </label>
           <input
+          
             type="email"
             className="form-control-input"
             name="email"

@@ -2,14 +2,17 @@ import axios from "axios";
 
 const dataOption = (muscleChoice) => {
   const options = {
-    method: "GET",
+    method: 'GET',
     url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${muscleChoice}`,
-    headers: {
-      "X-RapidAPI-Key": "57996be828msh986f446112d7c93p1e56fajsn95c27087f48a",
-      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+    qs: {
+      limit: '100',
+      offset: '0'
     },
+    headers: {
+      'x-rapidapi-key': 'b2d26080c6msh57cd06a97a41acfp1613afjsn1f1f3dbc272a',
+      'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
+    }
   };
-
   return options;
 };
 
@@ -18,7 +21,7 @@ const getData = async (muscle) => {
     const response = await axios.request(dataOption(muscle));
     return response.data;
   } catch (error) {
-    console.error(error);
+    console.error(error?.response?.data || error.message);
   }
 };
 

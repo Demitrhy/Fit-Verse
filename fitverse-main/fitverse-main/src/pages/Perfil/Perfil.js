@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import { toast } from 'sonner';
+import Swal from "sweetalert2";
 
 // React Router
 import { Link } from "react-router-dom";
@@ -37,7 +39,7 @@ const Perfil = () => {
 
         setLoadingExercise(false);
       } catch (error) {
-        console.error("Erro ao obter exercícios favoritos", error);
+        toast.error("Erro ao obter exercícios favoritos", error);
       } finally {
         setLoadingExercise(false);
       }
@@ -47,17 +49,26 @@ const Perfil = () => {
   };
 
   const handleRemoveFavoriteExercise = async (id) => {
-    const confirmed = window.confirm(
-      "Deseja excluir esse treino dos seus favoritos?"
-    );
-
-    if (confirmed) {
+     const result = await Swal.fire({
+          title: "Excluir dos favoritos?",
+          text: "Deseja excluir o treino favorito?",
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonText: "Sim",
+          cancelButtonText: "Cancelar",
+          confirmButtonColor: "#00d9ff",
+          cancelButtonColor: "#6c757d",
+          background: "#2c2c3e",
+          color: "#fff",
+        });
+      
+        if (result.isConfirmed) {
       setIsLoadingDelete(true);
       try {
         await deleteFavExercise(id);
-        alert("Exercício deletado com sucesso!");
+        toast.success("Exercício deletado com sucesso!");
       } catch (error) {
-        console.error("Falha ao deletar exercício!", error);
+        toast.error("Falha ao deletar exercício!", error);
       } finally {
         setIsLoadingDelete(false);
       }

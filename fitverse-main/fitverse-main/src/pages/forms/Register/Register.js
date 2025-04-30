@@ -64,9 +64,9 @@ const Register = () => {
           };
 
           const isRegister = await register(userObj, login);
-
+  
           if (isRegister) {
-            navigate("/trainingPlan");
+            navigate("/login");
             setIsLoading(false);
 
             setUsername("");

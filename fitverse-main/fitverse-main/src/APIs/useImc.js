@@ -1,29 +1,35 @@
-import axios from "axios";
 
-const dataOption = (height, weight) => {
-  const options = {
-    method: "GET",
-    url: "https://mega-fitness-calculator1.p.rapidapi.com/bmi",
-    params: {
-      weight: `${weight}`,
-      height: `${height}`,
-    },
-    headers: {
-      "X-RapidAPI-Key": "57996be828msh986f446112d7c93p1e56fajsn95c27087f48a",
-      "X-RapidAPI-Host": "mega-fitness-calculator1.p.rapidapi.com",
-    },
-  };
+const calcularIMC = (peso, altura) => {
+  const imc = peso / (altura * altura);
+  console.log("Passei por aqui", imc);
+  return imc.toFixed(2);
+};
 
-  return options;
+const classificarIMC = (imc) => {
+  if (imc < 18.5) return "Abaixo do peso";
+  if (imc < 25) return "Peso normal";
+  if (imc < 30) return "Sobrepeso";
+  if (imc < 35) return "Obesidade grau I";
+  if (imc < 40) return "Obesidade grau II";
+  return "Obesidade grau III (mórbida)";
 };
 
 const getData = async (height, weight) => {
   try {
-    const response = await axios.request(dataOption(height, weight));
-    return response.data;
+    const alturaMetros = height / 100; 
+    const imc = calcularIMC(weight, alturaMetros);
+    const classificacao = classificarIMC(imc);
+
+    return {
+      info: {
+        bmi: imc,
+        health: classificacao,
+      }
+    };
   } catch (error) {
-    console.error(error);
+    console.error("Erro ao calcular IMC:", error);
   }
 };
 
 export default getData;
+

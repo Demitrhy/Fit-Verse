@@ -1,5 +1,6 @@
 import axios from "axios";
 import receiveUser from "./useReceiveUser";
+import { toast } from 'sonner'
 
 const createUser = async (data, login) => {
   const url = "http://127.0.0.1:5000/api/user";
@@ -16,7 +17,7 @@ const createUser = async (data, login) => {
     });
 
     if (response.status === 200) {
-      console.log("Usuário criado com sucesso!");
+      toast.success("Usuário criado com sucesso!");
       const searchUser = await receiveUser(data.email, data.senha, login);
 
       if (searchUser && searchUser[0] && searchUser[1]) {
@@ -25,10 +26,10 @@ const createUser = async (data, login) => {
         return true;
       }
     } else {
-      console.log("Falha ao criar usuário.");
+      toast.error("Falha ao criar usuário.");
     }
   } catch (error) {
-    console.error("Erro ao fazer a chamada à API:", error);
+    toast.error("Erro ao fazer a chamada à API:", error);
   }
 
   return false; // Retorne false caso ocorra algum erro ou falha

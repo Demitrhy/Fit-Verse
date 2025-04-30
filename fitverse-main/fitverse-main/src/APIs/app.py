@@ -1,6 +1,6 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import mysql.connector
+from flask import Flask, request, jsonify # type: ignore
+from flask_cors import CORS # type: ignore
+import mysql.connector # type: ignore
 
 app = Flask(__name__)
 CORS(app)
@@ -14,9 +14,14 @@ db_config = {
     'raise_on_warnings': True
 }
 
+
+
+
+
 # Rota para criar um novo registro
 @app.route('/api/user', methods=['POST'])
 def criar_usuario():
+     
     data = request.get_json()
     # Variável para inserir o nome
     nome = data['nome']

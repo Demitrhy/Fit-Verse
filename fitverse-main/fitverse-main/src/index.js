@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { UserProvider } from "./Contexts/AuthContext";
 import { BrowserRouter } from "react-router-dom";
+import { Toaster } from 'sonner';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -14,6 +15,7 @@ root.render(
     <UserProvider>
       <BrowserRouter>
         <App />
+        <Toaster position="top-right" richColors closeButton />
       </BrowserRouter>
     </UserProvider>
   // </React.StrictMode>

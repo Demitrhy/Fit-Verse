@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from 'sonner'
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -50,11 +51,11 @@ const ChangePassword = () => {
       try {
         const isUpdated = await updatePassword(newPassword, user);
         if (isUpdated) {
-          alert("Senha alterada com sucesso!");
+          toast.success("Senha alterada com sucesso!");
           navigate("/perfil");
         }
       } catch (error) {
-        console.error("Erro ao atualizar o nome de usuário", error);
+        toast.error("Erro ao atualizar o nome de usuário", error);
       } finally {
         setIsLoading(false);
       }

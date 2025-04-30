@@ -7,6 +7,7 @@ import UserContext from "../../../Contexts/AuthContext";
 
 // Icons
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import { toast } from "sonner";
 
 const ChangeUsername = () => {
   const [newUsername, setNewUsername] = useState("");
@@ -50,11 +51,11 @@ const ChangeUsername = () => {
       try {
         const isUpdated = await updateUsername(dataName, user);
         if (isUpdated) {
-          alert("Nome de usuário trocado com sucesso!");
+          toast.success("Nome de usuário trocado com sucesso!");
           navigate("/perfil");
         }
       } catch (error) {
-        console.error("Erro ao atualizar o nome de usuário", error);
+        toast.error("Erro ao atualizar o nome de usuário", error);
       } finally {
         setIsLoading(false);
       }
