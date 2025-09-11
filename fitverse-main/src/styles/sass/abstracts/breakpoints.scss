@@ -1,0 +1,248 @@
+// Mobile
+
+// SM
+@media (max-width: 576px) {
+
+    // Navbar
+
+    nav {
+        background-color: $Black;
+        border-bottom: 3px solid $Orange;
+        position: fixed;
+        width: 100%;
+
+        .button-menu {
+            display: block !important; 
+        }
+    
+        .nav-list {
+            align-items: center;
+            background-color: $Black;
+            border-left: 3px solid $Orange;
+            flex-direction: column;
+            height: calc(100vh - 100%) !important;
+            justify-content: space-around;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: 68.9px;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+            width: 45vw;
+            
+            .nav-item {
+                opacity: 0;
+                margin: 0 !important;
+            }
+        }  
+
+        .nav-list.active {
+            transform: translateX(0);
+        }
+    }
+
+    // Training Plan
+
+    .container.trainingPlan {
+
+        .images-desktop {
+            display: none !important;
+        }
+    
+        .images-mobile {
+            display: block !important;
+            margin-top: 20px;
+    
+            .images-tp-mobile {
+                border-radius: 1px;
+                height: 40vw;
+                margin: auto;
+                width: 70vw;
+            }
+        }
+    
+        .text-tp {
+            p {
+                width: 70%;
+            }    
+        }
+    }
+
+    .container.form {
+        margin-top: 50px !important;
+
+        h4 {
+            text-align: center;
+        }
+
+        .form-tp {
+            .search-button {
+                display: block;
+                margin: auto;
+            }
+        }
+
+        .modal-title {
+            font-size: 15px;
+        }
+    }
+}
+
+// MD
+
+@media (max-width: 768px) {
+    // Training Plan
+    .container.trainingPlan {
+        flex-direction: column !important;
+
+        .text-tp {
+            padding-top: 0;
+            width: 100% !important;
+
+            h2, p {
+                text-align: center;
+            } 
+
+            h2 {
+                margin-top: 25px;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+
+            input {
+                display: block;
+                margin: auto !important;
+            }
+        }
+
+        .images-desktop {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            width: 100% !important;
+
+            .images-tp-desktop {
+                height: 245px !important;
+            }
+            
+            #tp1 {
+                position: relative !important;
+                right: 0 !important;
+                top: 0 !important;
+            }
+
+            #tp2 {
+                position: relative !important;
+                right: 0 !important;
+                top: 0 !important;
+            }
+
+            #tp3 {
+                display: block !important;
+                position: relative !important;
+                right: 0 !important;
+                top: 0 !important;
+            }
+
+        }  
+    }
+
+    .container.form {
+        .results-form {
+            .row.results {
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+// LG
+
+@media (max-width: 993px) {
+    // Training Plan
+
+    .container.trainingPlan {
+
+        .images-desktop {
+            position: relative;
+            height: 300px;
+
+            .images-tp-desktop {
+                height: 225px;
+            }
+            
+            #tp1 {
+                position: absolute;
+                right: 45%;
+                top: 10%;
+            }
+
+            #tp2 {
+                position: absolute;
+                right: 0;
+                top: 20%;
+            }
+
+            #tp3 {
+                display: none;
+            }
+        }
+    }
+
+    .container.form {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 993px) {
+    .images-desktop {
+        width: 468px !important;
+
+        #tp1 {
+            position: absolute;
+            right: 60% !important;
+            top: -70px !important;
+        }
+
+        #tp2 {
+            position: absolute;
+            right: 25% !important;
+            top: 90px !important;
+            
+        }
+
+        #tp3 {
+            position: absolute;
+            right: 25% !important;
+            top: -150px !important;
+        }
+        
+    }
+
+    .text-tp {
+        width: calc(100% - 468px) !important;
+    }
+
+}
+
+// XL
+
+@media (max-width: 1200px) {
+
+    // Training Plan
+
+    .container.trainingPlan {
+    
+        .images-desktop {
+            margin-top: 50px;
+            position: relative;
+        }  
+    }
+}
+
+// XXL
+
+@media (max-width: 1400px) {
+
+}

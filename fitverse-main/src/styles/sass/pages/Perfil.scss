@@ -1,0 +1,225 @@
+.container.perfil {
+    padding-top: 68.9px;
+
+    .loading-text {
+        background-color: $Blue;
+        color: $White;
+        font-weight: 600;
+        padding: 10px 0;
+        position: sticky;
+        text-align: center;
+        top: 69px;
+        z-index: 20;
+    }
+
+    .perfil-h1 {
+        border-bottom: 3px solid $Blue;
+        color: $Blue;
+        font-weight: 800;
+        margin-bottom: 20px;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .user-info-box {
+        .person-title {
+            font-weight: 700;
+
+            .person-icon {
+                color: $Blue;
+                font-size: 25px;
+                padding-bottom: 5px;
+            }
+        }
+
+        .username,
+        .email {
+            font-weight: 700;
+
+            .value {
+                font-weight: 400;
+            }
+        }
+
+    }
+
+    .favoriteEx {
+        .favoriteEx-title {
+            font-weight: 700;
+            .favoriteEx-icon {
+                color: $Blue;
+                font-size: 25px;
+                padding-bottom: 5px;
+            }
+        }
+
+        .favoriteEx-button-collapse {
+            @include primaryButton(12px);
+            margin-bottom: 15px;
+        }
+
+        .loadingUserExercise-text {
+            padding-left: 15px;
+            font-weight: 600;
+        }
+
+        .no-results-text {
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .row>* {
+            padding: 0;
+        }
+
+        .row.results {
+            background-color: $White;
+            border: 3px solid $Blue;
+            margin: 0;
+            padding: 10px 20px;
+            
+            .result-item {
+                border: 2px solid $Blue;
+                margin: auto;
+                position: relative;
+                width: 230px;
+
+    
+                .star-favorite {
+                    color: $Orange;
+                    cursor: pointer;
+                    font-size: 19px;
+                    position: absolute;
+                    right: 2%;
+                    top: 1%;
+                }
+
+                p {
+                    margin: 0;
+                    word-break: keep-all;
+                }
+                
+                .name-item {
+                    background-color: $Blue;
+                    border-bottom: 2px solid $Blue;
+                    color: $White;
+                    padding: 22px 5px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    width: 100%;
+                }
+    
+                .type-item,
+                .target-item,
+                .equipment-item {
+                    font-weight: 700;
+                    padding: 8px 5px;
+                    text-transform: capitalize;
+    
+                    span {
+                        font-weight: 400;
+                    }
+                }
+
+                .equipment-item {
+                    margin-bottom: 70px
+                }
+    
+                input {
+                    @include secondaryButton(12px);
+                    position: absolute;
+                    bottom: -8px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+
+                .modal.fade.show {
+                    .modal-dialog {
+                        .modal-content {
+                            .header-modal {
+                                background-color: $Blue;
+                                position: relative;
+
+                                .modal-title {
+                                    color: $White;
+                                    padding: 10px 40px;
+                                    word-break: keep-all;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                }
+
+                            }
+
+                            .body-modal {
+                                box-sizing: border-box;
+                                border: 10px solid $Blue;
+
+                                img {
+                                    max-height: 400px;
+                                    width: 100%;
+                                }
+                            }
+                            
+                            .footer-modal {
+                                align-items: center;
+                                background-color: $Blue;
+                                display: flex;
+                                justify-content: center;
+                                padding: 10px 0 15px 0;
+
+                                .close-button {
+                                    @include modalButton(13px, rgba(255, 0, 0, 0.625));
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .config {
+        padding-top: 15px;
+        .config-title {
+            font-weight: 700;
+
+            .config-icon {
+                color: $Blue;
+                font-size: 25px;
+                padding-bottom: 3px;
+            }
+        }
+
+        .changeUsername,
+        .changePassword {
+            margin: 8px 0 0 0;
+
+            .value {
+                text-decoration: none;
+                color: $Black;
+                font-weight: 600;
+
+                &:hover {
+                    border-bottom: 2px solid $Black;
+                    opacity: 80%;
+                }
+            }
+        }
+    }
+
+    .logout {
+        @include secondaryButton(12px); 
+        margin: 30px auto 0 auto;
+        text-decoration: none;
+        width: 61px;
+    }
+}
+
+
+
+
+
+
+    
