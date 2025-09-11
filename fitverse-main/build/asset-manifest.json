@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Fit-Verse/static/css/main.3efc3265.css",
+    "main.js": "/Fit-Verse/static/js/main.58b2e6c9.js",
+    "static/media/tp3.jpg": "/Fit-Verse/static/media/tp3.abad030e7d51cdf804e3.jpg",
+    "static/media/tp2.jpg": "/Fit-Verse/static/media/tp2.c424ecad05d041b9607e.jpg",
+    "static/media/tp1.jpg": "/Fit-Verse/static/media/tp1.61fd62a25cbf8e6baf93.jpg",
+    "static/media/tp4.jpg": "/Fit-Verse/static/media/tp4.618f57aa3a4a2e21e186.jpg",
+    "index.html": "/Fit-Verse/index.html",
+    "main.3efc3265.css.map": "/Fit-Verse/static/css/main.3efc3265.css.map",
+    "main.58b2e6c9.js.map": "/Fit-Verse/static/js/main.58b2e6c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3efc3265.css",
+    "static/js/main.58b2e6c9.js"
+  ]
+}
